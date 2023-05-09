@@ -46,7 +46,7 @@ while (<STDIN>){
         s/([*_]{2})(.*?)\g1/BOLD.$2.$reset_color /eg;
 
         # Italic
-        s/([*_]{1})(.*?)\g1/ITALIC.$2.$reset_color /eg;
+        s/(\b[*_]{1})(.*?)\g1\b/ITALIC.$2.$reset_color /eg;
 
         # List, convert into Unicode characters
         s/^( *)[-*]/$1\x{2022}/;
